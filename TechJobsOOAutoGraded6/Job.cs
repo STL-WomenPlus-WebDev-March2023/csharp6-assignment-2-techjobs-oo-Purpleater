@@ -42,9 +42,33 @@ namespace TechJobsOOAutoGraded6
             return HashCode.Combine(Id);
         }
 
-       
+        public string CheckForEmptyField(object data)
+        {
+            if (data == null)
+            {
+                return ("Data not available");
+            }
+            else
+            {
+                return data.ToString();
+            }
+        }
+
         // TODO: Task 5: Generate custom ToString() method.
         //Until you create this method, you will not be able to print a job to the console.
+
+        public override string ToString()
+        {
+            // the reason I gave the Name a single line conditional and the objects a method is because there's multiple
+            // objects and only one string present in Job
+            return $"\n" +
+                $"ID: {Id}\n" +
+                $"Name: {(string.IsNullOrEmpty(Name) ? "Data not available" : Name)}\n" +
+                $"Employer: {CheckForEmptyField(EmployerName)}\n" +
+                $"Location: {CheckForEmptyField(EmployerLocation)}\n" +
+                $"Position Type: {CheckForEmptyField(JobType)}\n" +
+                $"Core Competency: {CheckForEmptyField(JobCoreCompetency)}\n";
+        }
 
 
     }

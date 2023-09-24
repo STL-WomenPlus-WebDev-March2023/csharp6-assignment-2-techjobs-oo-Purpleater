@@ -40,6 +40,27 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(Equals(job3, job4));
         }
+
+        [TestMethod]
+        
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            Assert.IsTrue(job3.ToString().StartsWith("\n"));
+            Assert.IsTrue(job3.ToString().EndsWith("\n"));
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Assert.AreEqual(
+                "\n" +
+                "ID: 1\n" +
+                "Name: Data not available\n" +
+                "Employer: Data not available\n" +
+                "Location: Data not available\n" +
+                "Position Type: Data not available\n" +
+                "Core Competency: Data not available\n", job1.ToString());
+        }
     }
 
 }
