@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics.Metrics;
 using TechJobs.Tests;
 
 namespace TechJobsOO.Tests
@@ -100,7 +101,12 @@ namespace TechJobsOO.Tests
             var output = stringWriter.ToString();
 
             //verify
-            Assert.IsTrue(output.Contains($"Name: Product tester") && output.Contains("Employer: ACME") && output.Contains("Location: Desert") && output.Contains("Position Type: Quality control") && output.Contains("Core Competency: Persistence"));
+            Assert.IsTrue(output.Contains("Name: Product tester"));
+            Assert.IsTrue(output.Contains("Employer: ACME"));
+            Assert.IsTrue(output.Contains("Location: Desert"));
+            Assert.IsTrue(output.Contains("Position Type: Quality control"));
+            Assert.IsTrue(output.Contains("Core Competency: Persistence"));
+
         }
 
 

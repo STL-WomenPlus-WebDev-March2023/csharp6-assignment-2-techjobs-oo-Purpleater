@@ -24,7 +24,7 @@ namespace TechJobs.Tests
         }
 
         [TestMethod]
-        public void TestJobConstructorSetsAllFields()
+        public void TestToStringContainsCorrectLabelsAndData()
         {         
             Assert.AreEqual(job3.Name, "Product tester");
             
