@@ -21,7 +21,6 @@ namespace TechJobsOOAutoGraded6
 
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
-            Id = nextId++;
             Name = name;
             EmployerName = employerName;
             EmployerLocation = employerLocation;
@@ -42,15 +41,19 @@ namespace TechJobsOOAutoGraded6
             return HashCode.Combine(Id);
         }
 
+
+
         public string CheckForEmptyField(object data)
         {
-            if (data == null)
+            string testedData = data.ToString();
+
+            if (testedData == "")
             {
                 return ("Data not available");
             }
             else
             {
-                return data.ToString();
+                return testedData;
             }
         }
 

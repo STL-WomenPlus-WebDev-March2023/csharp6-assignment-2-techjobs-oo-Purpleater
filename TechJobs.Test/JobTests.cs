@@ -14,6 +14,7 @@ namespace TechJobs.Tests
 
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
+        Job job5 = new Job("Grass Toucher", new Employer("A corporation that exists"), new Location("The real world"), new PositionType("Quality control"), new CoreCompetency(""));
      
         //initalize your testing objects here
 
@@ -24,7 +25,7 @@ namespace TechJobs.Tests
         }
 
         [TestMethod]
-        public void TestToStringContainsCorrectLabelsAndData()
+        public void TestJobConstructorSetsAllFields()
         {         
             Assert.AreEqual(job3.Name, "Product tester");
             
@@ -50,16 +51,30 @@ namespace TechJobs.Tests
         }
 
         [TestMethod]
+
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(
+                "\n" +
+                $"ID: {job3.Id}\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n", job3.ToString());
+        }
+
+        [TestMethod]
         public void TestToStringHandlesEmptyField()
         {
             Assert.AreEqual(
                 "\n" +
-                "ID: 1\n" +
-                "Name: Data not available\n" +
-                "Employer: Data not available\n" +
-                "Location: Data not available\n" +
-                "Position Type: Data not available\n" +
-                "Core Competency: Data not available\n", job1.ToString());
+                $"ID: {job5.Id}\n" +
+                "Name: Grass Toucher\n" +
+                "Employer: A corporation that exists\n" +
+                "Location: The real world\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Data not available\n", job5.ToString());
         }
     }
 

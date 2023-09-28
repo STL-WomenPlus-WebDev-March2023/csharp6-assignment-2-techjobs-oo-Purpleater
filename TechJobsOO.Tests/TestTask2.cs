@@ -54,8 +54,8 @@ namespace TechJobsOO.Tests
         [TestMethod] //3
         public void Test_Second_Location_Constructor_Initializes_Id()
         {
-            Location location1 = new Location();
-            Location location2 = new Location();
+            Location location1 = new Location("Tundra");
+            Location location2 = new Location("Outer Space");
 
             //setup
             Location testLocation = new Location("Desert");
