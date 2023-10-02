@@ -57,17 +57,10 @@ namespace TechJobsOO.Tests
             Location location1 = new Location("Tundra");
             Location location2 = new Location("Outer Space");
 
-            //setup
-            Location testLocation = new Location("Desert");
-            Console.WriteLine(testLocation.Id);
-
             //verify
+            Assert.IsFalse(location1.Id + 2 == location2.Id, "Second constructor passes value to Id. Is this desirable?");
             Assert.AreEqual(location1.Id + 1, location2.Id);
-            Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
-
-            Console.WriteLine($"Id of Location 1: {location1.Id}");
-            Console.WriteLine($"Id of Location 2: {location2.Id}");
-            Console.WriteLine($"Id of TestLocation: {testLocation.Id}");
+            
         }
 
 
